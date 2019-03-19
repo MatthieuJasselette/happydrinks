@@ -1,3 +1,6 @@
+/* File path : ./src/_css/index.js */
+
+
 body {
   margin: 0;
   padding: 0;
@@ -11,4 +14,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.establishment {
+    background-color    : gray;
+    padding             : 10px;
+    margin              : 5px 30px;
+    border-radius       : 8px;
+    list-style          : none;
 }
