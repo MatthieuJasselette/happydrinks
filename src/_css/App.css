@@ -42,10 +42,19 @@
     list-style          : none;
 }
 
-.establishment-description {
+/* .establishment-description {
     flex : 0.8;
+} */
+.establishment-description {
+    flex : 0.7;
 }
 
+/* .establishmentLikeDislike {
+    flex            : 0.2;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+} */
 .establishmentLikeDislike {
     flex            : 0.2;
     display         : flex;
@@ -57,4 +66,19 @@
     background  : none;
     border      : none;
     color       : white;
+}
+
+.establishment-favori {
+    flex : 0.1;
+}
+
+
+.establishment button {
+    background  : none;
+    border      : none;
+    color       : white;
+}
+
+.favoriIcon {
+    color: yellow;
 }
