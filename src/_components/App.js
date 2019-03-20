@@ -10,8 +10,14 @@ class App extends Component {
   constructor (props){
     super (props);
     this.state = {
-      pseudo : "Inconnu"
+      pseudo : "Inconnu",
+      searchStringUser: "",
     }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e){
+      this.setState({searchStringUser: e.target.value});
   }
 
   randomPseudo = () => {
@@ -28,22 +34,36 @@ class App extends Component {
   }
 
   render() {
-    const listEstablishment = establishments.map( (establishment) => {
+    const establishmentFilter = establishments.filter((searchText) => {
+      let search = searchText.name + " " + searchText.description;
+      return search.toLowerCase().match(this.state.searchStringUser);
+    });
+
+    const listEstablishment = establishmentFilter.map( (establishment) => {
         return (
             <Establishment
                 key={ establishment.id }
                 establishment={ establishment }
             />
         )
-    })
+    });
+
     return (
       <div className="App">
-        <div className="App-header">
+        <header className="App-header">
           <img src={ logo } className="App-logo" alt="logo" />
           <h2>Welcome "{ this.state.pseudo }" to { this.props.title }</h2>
-        </div>
+        </header>
         <div className="App-intro">
           <p> <a onClick={ this.randomPseudo } >Changer le pseudo !</a> </p>
+          <div>
+            <input
+              type="text"
+              placeholder="search"
+              value={this.state.searchStringUser}
+              onChange={this.handleChange}
+            />
+          </div>
           <section>
             { listEstablishment }
           </section>

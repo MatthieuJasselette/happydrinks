@@ -10,7 +10,7 @@ class Establishment extends Component {
             isDisliked      : false,
             likeCounter     : 0,
             dislikeCounter  : 0,
-            favori          : false
+            favori          : false,
         }
     }
 
