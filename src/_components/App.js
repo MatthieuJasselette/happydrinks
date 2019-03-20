@@ -55,7 +55,7 @@ class App extends Component {
           <h2>Welcome "{ this.state.pseudo }" to { this.props.title }</h2>
         </header>
         <div className="App-intro">
-          <p> <a onClick={ this.randomPseudo } >Changer le pseudo !</a> </p>
+          <p> <button onClick={ this.randomPseudo } >Changer le pseudo !</button> </p>
           <div>
             <input
               type="text"
